@@ -1,5 +1,6 @@
 import {test} from '@playwright/test'
 import {format}from 'date-fns'
+import { chromium } from '@playwright/test';
 test("palin26nov",async()=>{
 let n=141,sum=0,r=0;
 let temp:number;
@@ -116,7 +117,124 @@ test("primno26nov",async()=>{
         console.log("NotPrime no "+num)
     
 })
+test("sortwords",async()=>{
+    let c:string[]=["zim","aus","canda","ban"]
+    let a:string=""
+    for(let i=0;i<c.length;i++)
+    {
+        for(let j=i+1;j<c.length;j++)
+        {
+            if(c[i]>c[j])
+            {
+                a=c[i];
+                c[i]=c[j];
+                c[j]=a;
+            }
+        }
+    }
+     for(let i=0;i<c.length;i++)
+        console.log(c[i])
+})
 
-test("pg",async()=>{
+test("duplioccur",async()=>{
+    let input:string="selenium l"
+    let c:string[]=input.split('')
+    for(let i=0;i<c.length;i++)
+    {
+        let count=1;
+        for(let j=i+1;j<c.length;j++)
+        {
+            if(c[i]===c[j] && c[j]!==' ')
+            {
+                count++;
+                c[j]='0'
+            }
+        }
+        if(count>1 && c[i]!=='0')
+            console.log(count+" "+c[i])
+    }
+
     
+})
+
+test("revwordsnov26",async()=>{
+    let input="Test Automation"
+    let words:string[]=input.split(" ")
+    let reverseSenence=""
+    for(const word of words)
+    {
+        let reverseword=word.split("").reverse().join("")
+        reverseSenence+=reverseword+" "
+    }
+    console.log(reverseSenence.trim())
+})
+
+test("pyramid",async()=>{
+    let rows=5;
+    for(let i=1;i<=rows;i++)
+    {
+       let line=""
+       for(let j=i;j<rows;j++)
+       {
+        line+=" "
+       }
+       for(let k=1;k<=(2*i)-1;k++)
+       {
+        line+="*"
+       }
+       console.log(line)
+    }
+})
+test("secondsmall",async()=>{
+    let arr:number[]=[4,5,1,3,2]
+    let smallest:number=Number.MAX_SAFE_INTEGER
+    let secondsmalles:number=Number.MAX_SAFE_INTEGER
+    for(let i=1;i<arr.length;i++)
+    {
+        if(arr[i]<smallest)
+        {
+            secondsmalles=smallest
+            smallest=arr[i]
+        }
+        else if(arr[i]<secondsmalles && arr[i]!==smallest)
+        {
+            secondsmalles=arr[i]
+        }
+    }
+    console.log(secondsmalles)
+    
+})
+
+test("factorail26nov",async()=>{
+    let factorial=1;
+    let n=5;
+    for(let i=1;i<=n;i++)
+    {
+        factorial*=i
+    }
+    console.log(factorial)
+})
+
+test("dupliwords",async()=>{
+    let words:string[]=["zim","aus","canda","ban","aus","canda"]
+    let seenwords=new Set<String>();
+    let duplicatewords=new Set<String>();
+    for(const word of words)
+    {
+        if(seenwords.has(word))
+        {
+            duplicatewords.add(word)
+        }
+        else{
+            seenwords.add(word)
+        }
+    }
+    console.log(duplicatewords)
+})
+
+test("browser launch",async()=>{
+    const browser= await chromium.launch({headless:false})
+    const page=await browser.newPage()
+    await page.goto("https://www.amazon.in/")
+    await browser.close()
 })
