@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test("put example", async ({ request }) => {
+test("patch example", async ({ request }) => {
     const authdata = {
         "username": "admin",
         "password": "password123"
@@ -41,18 +41,12 @@ test("put example", async ({ request }) => {
     console.log('New booking id: '+bookinid)
 
     const updatdbooking={
-    "firstname" : "Aryuu",
-    "lastname" : "pady",
-    "totalprice" : 400,
-    "depositpaid" : true,
-    "bookingdates" : {
-        "checkin" : "2025-01-01",
-        "checkout" : "2025-01-01"
-    },
-    "additionalneeds" : "dinner"
+    "firstname" : "Fazal",
+    "lastname" : "Azerine"
+    
 }
 
-const updatedResponse=await request.put("https://restful-booker.herokuapp.com/booking/"+bookinid,{
+const updatedResponse=await request.patch("https://restful-booker.herokuapp.com/booking/"+bookinid,{
     headers:{
         "Content-Type":"application/json",
         "Accept":"application/json",
@@ -64,5 +58,6 @@ const updatedResponse=await request.put("https://restful-booker.herokuapp.com/bo
 const updatedResponsejson=await updatedResponse.json()
 
 console.log(updatedResponsejson)
+
 
 })
