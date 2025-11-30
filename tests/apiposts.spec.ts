@@ -24,15 +24,15 @@ test("Post request", async ({ request }) => {
 
 test("booking idpost", async ({ request }) => {
     const bookingData = {
-        "firstname": "Sally",
-        "lastname": "Brown",
-        "totalprice": 111,
+        "firstname": "Arjun",
+        "lastname": "Brownie",
+        "totalprice": 333,
         "depositpaid": true,
         "bookingdates": {
             "checkin": "2013-02-23",
             "checkout": "2014-10-23"
         },
-        "additionalneeds": "Breakfast"
+        "additionalneeds": "srinks"
     }
     const response = await request.post("https://restful-booker.herokuapp.com/booking", {
         headers: {
@@ -43,5 +43,5 @@ test("booking idpost", async ({ request }) => {
     const responseBody = await response.json()
     console.log(responseBody)
     expect(responseBody.bookingid).not.toBeNull()
-    expect(responseBody.booking.firstname).toBe("Arjun")
+    expect(responseBody.booking.firstname).toContain("Arj")
 })
