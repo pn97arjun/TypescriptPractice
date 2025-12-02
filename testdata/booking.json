@@ -1,0 +1,11 @@
+{
+    "firstname" : "Regal",
+    "lastname" : "pn",
+    "totalprice" : 300,
+    "depositpaid" : true,
+    "bookingdates" : {
+        "checkin" : "2015-01-01",
+        "checkout" : "2015-01-01"
+    },
+    "additionalneeds" : "drinks"
+}

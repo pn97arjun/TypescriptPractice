@@ -82,7 +82,7 @@ test("reversewords", async () => {
     console.log(reverseSentence)
 })
 
-test("duplicate occ", async () => {
+test("duplicate occurence", async () => {
     let input = "selenium l"
     let c: string[] = input.split('')
     for (let i = 0; i < c.length; i++) {
