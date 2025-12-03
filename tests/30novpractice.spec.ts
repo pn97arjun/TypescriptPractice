@@ -223,3 +223,37 @@ if(temp===sum)
 else
     console.log("Not Palindrom: "+sum)
 })
+
+test("All occurence",async()=>{
+    let input:string="selenium lem"
+
+    let charCounts:Map<string,number>=new Map()
+
+    for(let i=0;i<input.length;i++)
+    {
+        let char:string=input[i]
+        if(charCounts.has(char))
+        {
+            charCounts.set(char,charCounts.get(char)! +1)
+        }
+        else
+        {
+            charCounts.set(char,1)
+        }
+    }
+    console.log("all occuence")
+    charCounts.forEach((count,char)=>{
+        console.log(`${char} : ${count}`)
+    })
+})
+
+test("intersection of array",async()=>{
+    let arr1:number[]=[1,2,3,4,5]
+    let arr2:number[]=[4,5,6,7,8]
+
+    let intersetion:number[]=arr1.filter(element=>{
+       return arr2.includes(element)
+    })
+
+    console.log(`intersection: ${intersetion}`)
+})
