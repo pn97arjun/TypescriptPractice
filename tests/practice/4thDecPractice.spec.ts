@@ -248,7 +248,7 @@ const dateStr=format(date,"d/MM/yyyy")
 console.log(dateStr)
 })
 test("palindrome",async()=>{
-    let n=141,sum=0,r=0
+    let n=151,sum=0,r=0
     let temp:number
     temp=n
     while(n>0)
