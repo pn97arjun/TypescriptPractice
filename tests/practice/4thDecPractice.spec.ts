@@ -263,7 +263,9 @@ test("palindrome",async()=>{
         console.log("not palin "+sum)
 })
 
-test("all",async()=>{
-
+test("remove duplicates",async()=>{
+let arr:number[]=[1,2,2,3,3,4,5,4,6]
+let uniqueArray=[...new Set(arr)];
+console.log(uniqueArray)
 })
 

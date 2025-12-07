@@ -19,3 +19,9 @@ test("dupli word",async()=>{
     console.log(duplicateWords)
 })
 
+test("remove duplicate",async()=>{
+    let arr:number[]=[1,2,2,3,4,4,3,5,6,6,7]
+    let uniarray=[... new Set(arr)]
+    console.log(uniarray)
+})
+
