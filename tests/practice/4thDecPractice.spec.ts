@@ -39,11 +39,11 @@ console.log(factorial)
 })
 
 test("second smallest",async()=>{
-let arr:number[]=[6,5,4,3,2,1]
+let arr:number[]=[2,5,4,3,26,1]
 let smallest:number=Number.MAX_SAFE_INTEGER
 let secondSamllest:number=Number.MAX_SAFE_INTEGER
 
-for(let i=1;i<arr.length;i++)
+for(let i=0;i<arr.length;i++)
 {
     if(arr[i]<smallest)
     {
@@ -269,3 +269,32 @@ let uniqueArray=[...new Set(arr)];
 console.log(uniqueArray)
 })
 
+function lengthOfLongestSubstring(s: string): number {
+    let maxLength = 0;
+    let left = 0; // Left pointer of the window
+    // Map to store the last seen index of each character
+    const charIndexMap = new Map<string, number>();
+
+    for (let right = 0; right < s.length; right++) {
+        const currentChar = s[right];
+
+        // If the character is already in the map and its last index is within the current window
+        if (charIndexMap.has(currentChar) && charIndexMap.get(currentChar)! >= left) {
+            // Move the left pointer past the last occurrence of the repeated character
+            left = charIndexMap.get(currentChar)! + 1;
+        }
+
+        // Update the map with the current character's new index
+        charIndexMap.set(currentChar, right);
+
+        // Calculate the current window's length and update max length
+        maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+}
+
+test("length of longest substring",async()=>{
+const maxlength=lengthOfLongestSubstring("abcdabcbb")
+console.log(maxlength)
+})

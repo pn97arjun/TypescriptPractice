@@ -25,3 +25,52 @@ test("remove duplicate",async()=>{
     console.log(uniarray)
 })
 
+function lengthlonestsubstring(s:string):number{
+    let maxlength=0;
+    let left=0;
+    let charIndexMap:Map<string,number>=new Map()
+
+    for(let right=0;right<s.length;right++)
+    {
+        let char:string=s[right]
+
+        if(charIndexMap.has(char) && charIndexMap.get(char)!>=left)
+        {
+           left=charIndexMap.get(char)!+1
+        }
+        charIndexMap.set(char,right)
+
+        maxlength=Math.max(maxlength,right-left+1)
+
+    }
+    return maxlength;
+
+}
+test("maxlength",async()=>{
+    const maxLength=lengthlonestsubstring("abcdabcbb")
+    console.log(maxLength)
+})
+
+test("all occurence pg",async()=>{
+    let input:string="selenium lem"
+
+    let charSetmap:Map<string,number>=new Map()
+
+    for(let i=0;i<input.length;i++)
+    {
+        let char:string=input[i]
+
+        if(charSetmap.has(char) )
+        {
+            charSetmap.set(char,charSetmap.get(char)!+1)
+        }
+        else{
+            charSetmap.set(char,1)
+        }
+    }
+
+    charSetmap.forEach((count,char)=>{
+        console.log(`${char} : ${count}`)
+    })
+})
+

@@ -80,7 +80,28 @@ for(let i=1;i<=rows;i++)
 
 })
 
-test("all",async({})=>{
+test("longest substring",async({})=>{
 
-
+const maxLength=lenthLongestsubstring("abcdabcbb")
+console.log(maxLength)
 })
+function lenthLongestsubstring(s:string):number{
+    let maxLength=0;
+    let left=0;
+
+    let charIndexMap:Map<string,number>=new Map()
+
+    for(let right=0;right<=s.length;right++)
+    {
+        let currentChar=s[right]
+
+        if(charIndexMap.has(currentChar) && charIndexMap.get(currentChar)!>=left)
+        {
+            left=charIndexMap.get(currentChar)!+1
+        }
+        charIndexMap.set(currentChar,right)
+        maxLength=Math.max(maxLength,right-left+1)
+    }
+
+    return maxLength;
+}
