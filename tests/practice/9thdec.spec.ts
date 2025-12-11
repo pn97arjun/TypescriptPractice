@@ -265,8 +265,9 @@ test("palindrome",async()=>{
     if(temp==sum)
         console.log("palin "+sum)
     else
-        console.log("nt palin "+sum)
+        console.log("not palin "+sum)
 })
 test("all",async()=>{
     
 })
+
