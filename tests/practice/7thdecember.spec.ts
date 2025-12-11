@@ -46,7 +46,7 @@ test("second smallest",async({})=>{
 let arr:number[]=[5,2,31,1]
 let smallest:number=Number.MAX_SAFE_INTEGER
 let secondSmallest=Number.MAX_SAFE_INTEGER
-for(let i=1;i<arr.length;i++)
+for(let i=0;i<arr.length;i++)
 {
     if(arr[i]<smallest)
     {

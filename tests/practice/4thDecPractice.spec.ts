@@ -77,8 +77,8 @@ for(let i=1;i<=rows;i++)
 
 })
 
-test("reveresewords",async()=>{
-let input:string="test Automation"
+test("reverese words",async()=>{
+let input:string="Test Automation"
 let words:string[]=input.split(" ")
 let reverseSentence=""
 for(const word of words)
