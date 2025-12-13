@@ -300,3 +300,21 @@ for(let i=1;i<=n;i++)
 
 
 })
+
+test("reverse order",async()=>{
+let sentence: string="India is my country"
+// 1. Trim leading/trailing spaces and split the string into an array of words
+  //    using a regular expression (/\s+/) to handle multiple spaces between words.
+  const words: string[] = sentence.trim().split(/\s+/);
+
+  // 2. Reverse the order of elements (words) in the array.
+  const reversedWords: string[] = words.reverse();
+
+  // 3. Join the reversed array of words back into a single string using a single space as a separator.
+  const result: string = reversedWords.join(" ");
+
+  console.log(result)
+})
+
+
+

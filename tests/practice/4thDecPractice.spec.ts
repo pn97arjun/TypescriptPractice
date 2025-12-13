@@ -298,3 +298,16 @@ test("length of longest substring",async()=>{
 const maxlength=lengthOfLongestSubstring("abcdabcbb")
 console.log(maxlength)
 })
+
+test("reverse word",async()=>{
+let input:string="India is my country"
+
+let words:string[]=input.trim().split(/\s+/)
+
+let reverseWords:string[]=words.reverse()
+
+let result=reverseWords.join(" ")
+
+console.log(result)
+
+})

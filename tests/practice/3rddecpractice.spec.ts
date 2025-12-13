@@ -74,3 +74,16 @@ test("all occurence pg",async()=>{
     })
 })
 
+test("reverse word",async()=>{
+  let input:string="India is my country"
+
+  let words:string[]=input.trim().split(/\s+/)
+
+  let reverseWord:string[]=words.reverse()
+
+  let result:string=reverseWord.join(" ")
+
+  console.log(result)
+})
+
+

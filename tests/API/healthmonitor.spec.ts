@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-test("health", async ({ request }) => {
+test.skip("health", async ({ request }) => {
     test.setTimeout(0)
     while (true) {
         const start = Date.now()
