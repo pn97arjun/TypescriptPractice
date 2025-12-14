@@ -26,6 +26,7 @@ test("duplicate words",async()=>{
         }
     }
     console.log(duplicateWords)
+    console.log(duplicateWords.size)
 })
 
 test("factorial",async()=>{
