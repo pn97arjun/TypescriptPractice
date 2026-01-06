@@ -176,7 +176,29 @@ test("all occurence", async () => {
     
 })
 
-test("", async () => {
-  
+test("dec19 revmpjasisi", async () => {
+  let input:string="India is great"
+
+  let cleanInput=input.trim().split(/\s+/g)
+
+  let revSent=cleanInput.reverse().join(" ")
+  console.log(revSent)
+
+    
+})
+
+test("dec19 palin", async () => {
+  let input:string="ata ata"
+
+  let cleanInput=input.toLowerCase().replace(/[^a-z0-9]/,"")
+
+  let revsent=cleanInput.split("").reverse().join("")
+
+  console.log(revsent)
+
+  let gloablpalin:Boolean=cleanInput===revsent
+
+  console.log(gloablpalin)
+
     
 })

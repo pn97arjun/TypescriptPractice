@@ -77,7 +77,7 @@ test("pyramid", async ({ }) => {
     }
 })
 
-test("reverse words", async ({ }) => {
+test("reverse words 18dec", async ({ }) => {
     let input = "Test Automation"
     let words = input.split(' ')
     let reverseSentence = ""
@@ -296,4 +296,25 @@ console.log("setting env")
 
 test.afterEach("After test",async()=>{
     console.log("closing browser")
+})
+
+test("globalpalin", async ({ }) => {
+let input:string="malayalam"
+
+let cleaninput=input.toLowerCase().replace(/[^a-z0-9]/,"")
+
+let revsetnt=cleaninput.split("").reverse().join("")
+
+let globalpalin:Boolean=cleaninput===revsetnt
+
+console.log(`${globalpalin}`)
+})
+
+test("rev mpahsis", async ({ }) => {
+let input:string="India is great"
+
+let cleaninput=input.trim().split(/\s+/g)
+let rev=cleaninput.reverse().join(" ")
+
+console.log(rev)
 })
